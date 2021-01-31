@@ -2,8 +2,8 @@ class Bob{
     constructor(x,y,r){
     var options={
     isStatic:false,
-    restitution:0.3,
-    friction:0.5,
+    restitution:1,
+    friction:0,
     density:1.2
     }
     this.body=Bodies.circle(x,y,r/2,options);
@@ -13,13 +13,11 @@ class Bob{
     }
     display(){
     var pos=this.body.position;
-    var angle=this.body.angle;
     push();
     translate(pos.x,pos.y);
-    rotate(angle);
     fill ("pink");
-    imageMode(CENTER);
-    image(this.image,0,0,40,40);
+    ellipseMode(RADIUS);
+    ellipse(0,0,this.r,this.r);
     pop();
     
     
